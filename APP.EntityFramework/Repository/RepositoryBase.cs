@@ -246,6 +246,11 @@ namespace APP.EntityFramework.Repository
 
     public abstract class RepositoryBase<TDbContext, TEntity, TPrimaryKey> : RepositoryBase<TDbContext, TEntity> where TEntity : class, IEntity<TPrimaryKey> where TDbContext : DbContext, new()
     {
+        /// <summary>
+        /// 创建外键关联
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         protected static Expression<Func<TEntity, bool>> CreateEqualityExpressioinForId(TPrimaryKey id)
         {
             var lambdaParam = Expression.Parameter(typeof(TEntity));
@@ -256,7 +261,7 @@ namespace APP.EntityFramework.Repository
         }
 
         /// <summary>
-        /// 
+        /// 根据外键Id查询数据表中记录
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -265,6 +270,11 @@ namespace APP.EntityFramework.Repository
             return GetAll().FirstOrDefault(CreateEqualityExpressioinForId(id));
         }
 
+        /// <summary>
+        /// 根据外键Id异步查询数据表中记录
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public virtual async Task<TEntity> FirstOrDefaultAsync(TPrimaryKey id)
         {
             return await Table.FirstOrDefaultAsync(CreateEqualityExpressioinForId(id));
