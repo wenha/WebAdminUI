@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APP.Application.Users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,25 +7,25 @@ using System.Web.Mvc;
 
 namespace APP.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        private readonly IUserApplication UserApplication;
+
+        public HomeController(IUserApplication userApplication)
+        {
+            UserApplication = userApplication;
+        }
+
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult GetAll()
         {
-            ViewBag.Message = "Your application description page.";
+            var data = UserApplication.GetUsers(u => u.RealName == "张三");
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return Json(data);
         }
     }
 }
