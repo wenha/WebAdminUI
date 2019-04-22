@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="IDependency.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflect\AssemblyFinder.cs" />
+    <Compile Include="Reflect\ReflectionHelper.cs" />
+    <Compile Include="Reflect\TypeFinder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

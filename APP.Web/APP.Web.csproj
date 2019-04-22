@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.0\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="Microsoft.CSharp" />
@@ -127,6 +133,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IOCConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -193,6 +200,10 @@
     <ProjectReference Include="..\APP.Application\APP.Application.csproj">
       <Project>{990395BF-B290-46C5-8DD6-C9A41F6C786C}</Project>
       <Name>APP.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APP.Common\APP.Common.csproj">
+      <Project>{6026CF7D-6E0C-4952-89B5-94D6D420E02E}</Project>
+      <Name>APP.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\APP.Core\APP.Core.csproj">
       <Project>{AE6A5AC1-2B1D-4B66-BA6C-D5A308639CBE}</Project>
