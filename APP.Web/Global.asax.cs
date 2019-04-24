@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APP.Web.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,11 @@ namespace APP.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            // Ioc配置
+            IOCConfig.RegisterDependency();
+            // AutoMapper配置
+            AutoMapConfig.RegisterAutoMap();
         }
     }
 }

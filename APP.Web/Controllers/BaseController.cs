@@ -57,7 +57,7 @@ namespace APP.Web.Controllers
             {
                 throw;
             }
-            base.OnActionExecuted(filterContext); base.OnActionExecuted(filterContext);
+            base.OnActionExecuted(filterContext); 
         }
     }
 }

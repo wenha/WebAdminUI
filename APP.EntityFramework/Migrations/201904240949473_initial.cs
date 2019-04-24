@@ -1,4 +1,4 @@
-namespace APP.EntityFramework.Migrations
+namespace APP.EntityFramework.Context
 {
     using System;
     using System.Data.Entity.Migrations;

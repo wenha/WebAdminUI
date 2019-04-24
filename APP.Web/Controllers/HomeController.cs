@@ -16,16 +16,15 @@ namespace APP.Web.Controllers
             UserApplication = userApplication;
         }
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public ActionResult GetAll()
         {
-            var data = UserApplication.GetUsers(u => u.RealName == "张三");
+            var data = UserApplication.GetUsers(u => u.RealName == "张三").Select(m=>new 
+            {
+                m.RealName,
+                m.PhoneNumber,
+            }).FirstOrDefault();
 
-            return Json(data);
+            return Json(data,JsonRequestBehavior.AllowGet);
         }
     }
 }
