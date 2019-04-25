@@ -37,6 +37,9 @@ namespace APP.EntityFramework.Context
                     {
                         Id = c.Int(nullable: false, identity: true),
                         RealName = c.String(),
+                        RoleId = c.Int(nullable: false),
+                        UserType = c.Int(nullable: false),
+                        CreateTime = c.DateTime(nullable: false),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),

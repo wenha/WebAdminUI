@@ -13,7 +13,7 @@ namespace APP.EntityFramework.Context
         
         string IMigrationMetadata.Id
         {
-            get { return "201904240949473_initial"; }
+            get { return "201904251542323_initial"; }
         }
         
         string IMigrationMetadata.Source

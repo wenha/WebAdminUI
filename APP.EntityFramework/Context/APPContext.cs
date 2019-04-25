@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace APP.EntityFramework.Context
 {
-    public class APPContext : IdentityDbContext<User,Role,int,UserLogin,UserRole,UserClaim>,IContextDependency
+    public class APPContext : IdentityDbContext<User, Role, int, UserLogin, UserRole, UserClaim>, IContextDependency
     {
         public bool IsDisposed { get; private set; } = false;
 
