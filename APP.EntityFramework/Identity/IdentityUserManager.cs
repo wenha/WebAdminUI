@@ -15,8 +15,7 @@ namespace APP.EntityFramework.Identity
 {
     public class IdentityUserManager : UserManager<User, int>
     {
-        public IdentityUserManager(IUserStore<User, int> store)
-            : base(store)
+        public IdentityUserManager(IUserStore<User, int> store) : base(store)
         {
         }
 
@@ -38,8 +37,7 @@ namespace APP.EntityFramework.Identity
 
         public static IdentityUserManager Create(APPContext dbContext)
         {
-            return new IdentityUserManager(
-                new UserStore<User, Role, int, UserLogin, UserRole, UserClaim>(dbContext));
+            return new IdentityUserManager(new UserStore<User, Role, int, UserLogin, UserRole, UserClaim>(dbContext));
         }
     }
 }
